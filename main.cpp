@@ -51,8 +51,9 @@ void battleTurn(shared_ptr<Character> &enemy, shared_ptr<Character> &player, boo
 			cout << endl << "Your Move:" << endl;
 			cout << "What will you do?" << endl;
 			cout << "1: Attack" << endl;
+			cout << "2: Exit" << endl;
 			cin >> choice;
-			while (choice != 1) {
+			while (choice != 1 && choice != 2) {
 				try {
 					throw choice;
 				}
@@ -73,6 +74,10 @@ void battleTurn(shared_ptr<Character> &enemy, shared_ptr<Character> &player, boo
 					firstPlayer = false;
 					secondPlayer = true;
 				}
+			}
+			else if (choice == 2){
+				cout << "Exiting..." << endl;
+				exit(1);
 			}
 		}
 		// enemy attacks
