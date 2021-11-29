@@ -14,9 +14,11 @@ Here's a great video setup guide if you need it: https://www.youtube.com/watch?v
 Alternatively, you could also use **Visual Studio Community Edition 2022 (IDE)** from https://visualstudio.microsoft.com/ with "Desktop development with C++" package installed and it should work right out of the box.
 
 ## How to Contribute!
-Sign up for any issues and you're good to go!
+Sign up for any issues, fork the branch or install locally, and you're good to go!
 
 If you have any ideas or bugs as well, don't be afraid to create a new issue for approval.
+
+When you're finish with an issue, you can open up a pull requests and I'll take a look at it.
 
 ## Coding Standards
 Anything works as long as the code is:
