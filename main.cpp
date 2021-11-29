@@ -1,4 +1,4 @@
-#include "class.cpp"
+#include "classes.cpp"
 
 string playerChooseName(){
 	string name;
