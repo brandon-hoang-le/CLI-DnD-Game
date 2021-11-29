@@ -1,11 +1,7 @@
 # CLI DnD Game
 Dungeons & Dragons inspired CLI game written in C++
 
-
-
-![demo](https://user-images.githubusercontent.com/55907638/143802363-071f8f62-9269-4d55-9d0f-caef51ffeeca.gif)
-
-
+![demo2](https://user-images.githubusercontent.com/55907638/143802700-ed0e7158-6aec-47e8-8242-4fae14118d4b.gif)
 
 ## Setup and Testing
 Personally, I used **MinGW Distribution** from https://nuwen.net/mingw.html to compile C++ on VS Code. 
