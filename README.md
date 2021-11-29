@@ -5,7 +5,7 @@ Dungeons & Dragons inspired CLI game written in C++
 Personally, I used **MinGW Distribution** from https://nuwen.net/mingw.html to compile C++ on VS Code. 
 
 You may also include the latest Code Runner extension in VS Code to have an easier time running the code. 
-  - Optional: enable **"code-runner.runInTerminal"** in Code Runner extension setting to have your code run on your terminal
+  - Optional: enable "code-runner.runInTerminal" in Code Runner extension setting to have your code run on your terminal
 
 Here's a great video setup guide if you need it: https://www.youtube.com/watch?v=jvg4VtYEhKU
 
