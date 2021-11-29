@@ -14,7 +14,7 @@ Alternatively, you could also use **Visual Studio Community Edition 2022 (IDE)**
 ## How to Contribute!
 Sign up for any issues and you're good to go!
 
-If you have any ideas as well, don't be afraid to create a new issue for approval.
+If you have any ideas or bugs as well, don't be afraid to create a new issue for approval.
 
 ## Coding Standards
 Anything works as long as the code is:
