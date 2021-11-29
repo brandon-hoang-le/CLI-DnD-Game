@@ -25,5 +25,5 @@ Anything works as long as the code is:
 
 We want to focus on readability and maintainability so if you keep those in mind then that's perfect!
 
-You may also follow [C++ Coding Standards](https://isocpp.org/wiki/faq/coding-standard) for reference.
+You may also follow [C++ Coding Standards](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines) for reference.
   
