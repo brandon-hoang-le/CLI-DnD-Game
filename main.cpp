@@ -158,6 +158,7 @@ shared_ptr<Character> makeClass(int value){
 		default:
 			result = make_shared<Warrior>(playerChooseName());
 	}
+	return result;
 }
 
 int main() {
