@@ -107,8 +107,8 @@ void endBattle(shared_ptr<Character> &enemy, shared_ptr<Character> &player){
 	enemy = make_shared<Monster>(); // new enemy
 }
 void battleSequence() {
-	shared_ptr<Character> player = make_shared<Warrior>(playerChooseName()); // initialize player
-	shared_ptr<Character> enemy = make_shared<Monster>(); // initialize enemy 
+	shared_ptr<Character> player = makeClass(chooseClass()); // initialize player
+	shared_ptr<Character> enemy = makeClass(0); // initialize enemy 
 
 	player->introduction();
 
@@ -119,6 +119,43 @@ void battleSequence() {
 		decideFirstTurn(enemy, player, firstPlayer, secondPlayer);
 		battleTurn(enemy, player, firstPlayer, secondPlayer);
 		endBattle(enemy, player);
+	}
+}
+
+size_t chooseClass() {
+	vector<string> class_list = { "Warrior" };
+	size_t user_class_choice;
+
+	cout << "Choose a Class! (Please Enter Digit!):" << endl;
+
+	for (int i = 0; i < class_list.size(); i++) {
+		cout << i + 1 << " " << class_list.at(i) << endl;
+	}
+
+	do {
+		cin >> user_class_choice;
+
+		if (user_class_choice <= 0 || user_class_choice > class_list.size()) {
+			cout << "Invalid Option, Please Choose Again." << endl;
+		}
+
+	} while (user_class_choice <= 0 || user_class_choice > class_list.size());
+	
+	return user_class_choice;
+}
+
+shared_ptr<Character> makeClass(int value){
+	shared_ptr<Character> result;
+
+	switch (value) {
+		case 0 : 
+			result = make_shared<Monster>();
+			break;
+		case 1 :
+			result = make_shared<Warrior>(playerChooseName());
+			break;
+		default:
+			result = make_shared<Warrior>(playerChooseName());
 	}
 }
 
