@@ -1,4 +1,5 @@
 #include "classes.cpp"
+#include <vector>
 
 string playerChooseName(){
 	string name;
