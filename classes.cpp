@@ -19,7 +19,9 @@ protected:
 	int numberOfAttkDie; 
 	int attkDieSides; 
 	int firstTurnRoll; 
-	int damageTaken; 
+	int damageTaken;
+	int fleeRoll; 
+	bool fleeStatus;
 public:
 	Character() {}
 	int getAttkDamage() {
@@ -33,6 +35,12 @@ public:
 	}
 	string getName() {
 		return name; 
+	}
+	int getFleeRoll(){
+		return fleeRoll;
+	}
+	bool getFleeStatus(){
+		return fleeStatus;
 	}
 	virtual void firstTurn() {
 		firstTurnRoll = rand() % 20 + 1; 
@@ -53,8 +61,8 @@ public:
 		cout << name << "'s total HP now at: " << health << endl; 
 	
 	}
-
 	virtual void introduction() = 0;
+	virtual void runFromFight() = 0;
 	virtual void endFight() = 0; 
 	virtual void printStats() = 0; 
 };
@@ -82,9 +90,23 @@ public:
 		attkDmg += bonusAttk;
 		
 	}
+
 	virtual void introduction() {
 		cout << "You are " << name << ", a ferocious Warrior." << endl;
 	}
+
+	virtual void runFromFight() {
+		fleeRoll =  rand() % 20 + 1;
+		if (fleeRoll % 2 == 0){
+			cout << "You have fled the fight!" << endl;
+			fleeStatus = true;
+		}
+		else {
+			cout << "You were unable to escape!" << endl;
+			fleeStatus = false;
+		}
+	}
+
 	virtual void endFight() {
 		if (health == 0) {
 			cout << "You have died..." << endl; 
@@ -125,6 +147,9 @@ public:
 			cout << name << " has been slain!" << endl; 
             cout << "You won the fight!" << endl << endl;
 		}
+	}
+	virtual void runFromFight() {
+		cout << "Monsters don't run." << endl;
 	}
 	virtual void rollAttkDie() {
 		int rolls[2];
