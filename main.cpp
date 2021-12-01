@@ -1,6 +1,9 @@
 #include "classes.cpp"
 #include <vector>
 
+size_t chooseClass();
+shared_ptr<Character> makeClass(int value);
+
 string playerChooseName(){
 	string name;
 	cout << "What is your character name?" << endl; 
@@ -52,9 +55,10 @@ void battleTurn(shared_ptr<Character> &enemy, shared_ptr<Character> &player, boo
 			cout << endl << "Your Move:" << endl;
 			cout << "What will you do?" << endl;
 			cout << "1: Attack" << endl;
-			cout << "2: Exit" << endl;
+			cout << "2: Run" << endl;
+			cout << "3: Exit" << endl;
 			cin >> choice;
-			while (choice != 1 && choice != 2) {
+			while (choice < 1 && choice > 3) {
 				try {
 					throw choice;
 				}
@@ -77,6 +81,21 @@ void battleTurn(shared_ptr<Character> &enemy, shared_ptr<Character> &player, boo
 				}
 			}
 			else if (choice == 2){
+				player->runFromFight();
+				if (player->getFleeStatus() == true){
+					return;
+				}
+				else{
+					enemy->rollAttkDie(); 
+					player->receiveDamage(enemy->getAttkDamage()); 
+
+					if (player->getHP() > 0) {
+						firstPlayer = true;
+						secondPlayer = false;
+					}
+				}
+			}
+			else if (choice == 3){
 				cout << "Exiting..." << endl;
 				exit(1);
 			}
@@ -97,6 +116,9 @@ void endBattle(shared_ptr<Character> &enemy, shared_ptr<Character> &player){
 	if (player->getHP() == 0) {
 		player->endFight();
 		exit(1);
+	}
+	else if (player->getFleeStatus() == true){
+		;
 	}
 	else {
 		enemy->endFight();
